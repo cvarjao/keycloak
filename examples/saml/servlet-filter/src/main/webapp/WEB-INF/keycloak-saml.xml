@@ -18,40 +18,35 @@
 <keycloak-saml-adapter xmlns="urn:keycloak:saml:adapter"
                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                        xsi:schemaLocation="urn:keycloak:saml:adapter http://www.keycloak.org/schema/keycloak_saml_adapter_1_7.xsd">
-    <SP entityID="http://localhost:8080/saml-servlet-filter/"
-        sslPolicy="EXTERNAL"
+    <SP entityID="https://saml-servlet-filter-devops-sso-sandbox.pathfinder.gov.bc.ca/"
+        sslPolicy="NONE"
         logoutPage="/logout.jsp">
         <Keys>
             <Key signing="true">
                 <PrivateKeyPem>
-                    MIICWwIBAAKBgQDVG8a7xGN6ZIkDbeecySygcDfsypjUMNPE4QJjis8B316CvsZQ0hcTTLUyiRpHlHZys2k3xEhHBHymFC1AONcvzZzpb40tAhLHO1qtAnut00khjAdjR3muLVdGkM/zMC7G5s9iIwBVhwOQhy+VsGnCH91EzkjZ4SVEr55KJoyQJQIDAQABAoGADaTtoG/+foOZUiLjRWKL/OmyavK9vjgyFtThNkZY4qHOh0h3og0RdSbgIxAsIpEa1FUwU2W5yvI6mNeJ3ibFgCgcxqPk6GkAC7DWfQfdQ8cS+dCuaFTs8ObIQEvU50YzeNPiiFxRA+MnauCUXaKm/PnDfjd4tPgru7XZvlGh0wECQQDsBbN2cKkBKpr/b5oJiBcBaSZtWiMNuYBDn9x8uORj+Gy/49BUIMHF2EWyxOWz6ocP5YiynNRkPe21Zus7PEr1AkEA5yWQOkxUTIg43s4pxNSeHtL+Ebqcg54lY2xOQK0yufxUVZI8ODctAKmVBMiCKpU3mZQquOaQicuGtocpgxlScQI/YM31zZ5nsxLGf/5GL6KhzPJT0IYn2nk7IoFu7bjn9BjwgcPurpLA52TNMYWQsTqAKwT6DEhG1NaRqNWNpb4VAkBehObAYBwMm5udyHIeEc+CzUalm0iLLa0eRdiN7AUVNpCJ2V2Uo0NcxPux1AgeP5xXydXafDXYkwhINWcNO9qRAkEA58ckAC5loUGwU5dLaugsGH/a2Q8Ac8bmPglwfCstYDpl8Gp/eimb1eKyvDEELOhyImAv4/uZV9wN85V0xZXWsw==
+                    MIIEpAIBAAKCAQEAoxLCYgpNacELQX2BuCh3Foi/k636nMl/fnT7zrNwfSsHdMtBTxk5deZ12VaAgcyRSlYCe0uO6//uEVaCeHJghbLC1F8xpDqvA8CO8vO54Azhbw3nHhdxAE7A0F9Pnhy8hpQxOMhHNP71civtLXXp3oJqFCUiZpU2TiJWxJdYYbJ4STK/toDry+5Br7Xis8sRPOhU6qztcKVpKZO5Zph5ZEUzAIyGzPIxN6LQ14y3SEnBC38tjOL9bdbuzijOZ+M0k2CAavPg0cVg4LIXP/gAMAiWEkpsabdeqOJVzz89KGHqvyeBiM/7UphnsVHDmh4V9EzMk6G8kKTRjQwm6iiOOwIDAQABAoIBAFKfbZdo6uIbKg3Lfk8FSZlEPfSgIKsRuKQkt3R6HBN/Gq8FUJi4ChH/a1Rr7H5XXIHSZD1+AfL23/Mu5roKEXeMJASgGrG//e6jwIm+DT5EqG+xFpl7fQiP3kd1EwzkOGzjZrEDYHiseUWYlfoDlTPk1cRRMEXTcglSgq3mlKQijZJ4swSQ4QxuS7vvVmlLWZfQRToy5HWRBemn57MpQ2zf09BDZxop2xWjK8gJdkfoct0Yto64ND96oQAixaiWqCrXQvkUoqEKtLHEnPcJ5eZUQPTyEraJJEgIZdDpEyMCGcjmlp6r3PD7eJJSgQLOxXE4noqgyHFgh64p2wTGtBECgYEA4eYlGWRk7c6+/MthsQ9TvCw5x1LTtIM9VDWVh14Fkk34ixBjRbrbLEfSJndMKb909ikZmeePEII1wt/UGN6iAIXvw4bFKjp6hnIw7jW1CQz46KtF9QKuex5Is8D+plN1wGQRSnBQCfRlYJRJ3qPzgzxUC9GRsiD73rdt6CsK0OkCgYEAuM2Bqz7EPF2bY2+WnDNnzkx0wNfwLT5grUaYjFoWrgTbsjblVD2C3EOvz7RkzSTsbKj+ZpZLuP2ON66ud4JMUpQ5tx04wt4GsajBq1YeQpMPASDGOJg/Kpmm4xuLbTzDLLcHkg1ytVN+v332zqHHHcVBR58ios8hEKJ9uWkSD4MCgYEA2LPjwQEbBTpA4tbkB2uxoyE16C1fo5oGekLRB8O9SoV7uUPmR50h5c+cHIRyztW4iPASfB6zkl2m3yPDHnxsIl5aDFK7z2+73D+tCscAvQbxvJmZCZoh8T+y9KVeZAZKPl6Aa81kKriFi+mVF3xl/O4hnhjTUHLty9BhIcgwnwkCgYBGVyqA9N4aoAKSQZoREFv1oRJbiJXJktGXgqRz36J8UCsTVWPKwbL6heT4aRBpKSG4ZkaW46Qk4JXuSdXsdTL5x6OEOGIvgfUIUFSPE7Nm4bS3WDM6vXBllaB5FzXluVgMwAnopKfBrusylg6ILfmtMjSbv02erLpIK6ExHnYaYwKBgQCzrNAqe9EkJPVq1kWcF2RG66M8vXU4FgEDw7FHFBnNkZZpCIPVd3bfma9pv1h/FzwjIqCfY65epXAtceNhYBX21s5weg2a1YbSeYiixdo5IYY8XbrSPlQrD15nFyLelz0EXB3r4W+Sf+mwXcBQux4t/INj8bTRpsMjOhaSGgkJKQ==
                 </PrivateKeyPem>
                 <CertificatePem>
-                    MIIB1DCCAT0CBgFJGP5dZDANBgkqhkiG9w0BAQsFADAwMS4wLAYDVQQDEyVodHRwOi8vbG9jYWxob3N0OjgwODAvc2FsZXMtcG9zdC1zaWcvMB4XDTE0MTAxNjEyNDQyM1oXDTI0MTAxNjEyNDYwM1owMDEuMCwGA1UEAxMlaHR0cDovL2xvY2FsaG9zdDo4MDgwL3NhbGVzLXBvc3Qtc2lnLzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1RvGu8RjemSJA23nnMksoHA37MqY1DDTxOECY4rPAd9egr7GUNIXE0y1MokaR5R2crNpN8RIRwR8phQtQDjXL82c6W+NLQISxztarQJ7rdNJIYwHY0d5ri1XRpDP8zAuxubPYiMAVYcDkIcvlbBpwh/dRM5I2eElRK+eSiaMkCUCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCLms6htnPaY69k1ntm9a5jgwSn/K61cdai8R8B0ccY7zvinn9AfRD7fiROQpFyY29wKn8WCLrJ86NBXfgFUGyR5nLNHVy3FghE36N2oHy53uichieMxffE6vhkKJ4P8ChfJMMOZlmCPsQPDvjoAghHt4mriFiQgRdPgIy/zDjSNw==
+                    MIIDBTCCAe0CBgFgU2AxBTANBgkqhkiG9w0BAQsFADBGMUQwQgYDVQQDDDtodHRwOi8vc2FtbC1zZXJ2bGV0LWZpbHRlci1teXByb2plY3QuMTkyLjE2OC45OS4xMDAubmlwLmlvLzAeFw0xNzEyMTQwNDUzMjFaFw0yNzEyMTQwNDU1MDFaMEYxRDBCBgNVBAMMO2h0dHA6Ly9zYW1sLXNlcnZsZXQtZmlsdGVyLW15cHJvamVjdC4xOTIuMTY4Ljk5LjEwMC5uaXAuaW8vMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoxLCYgpNacELQX2BuCh3Foi/k636nMl/fnT7zrNwfSsHdMtBTxk5deZ12VaAgcyRSlYCe0uO6//uEVaCeHJghbLC1F8xpDqvA8CO8vO54Azhbw3nHhdxAE7A0F9Pnhy8hpQxOMhHNP71civtLXXp3oJqFCUiZpU2TiJWxJdYYbJ4STK/toDry+5Br7Xis8sRPOhU6qztcKVpKZO5Zph5ZEUzAIyGzPIxN6LQ14y3SEnBC38tjOL9bdbuzijOZ+M0k2CAavPg0cVg4LIXP/gAMAiWEkpsabdeqOJVzz89KGHqvyeBiM/7UphnsVHDmh4V9EzMk6G8kKTRjQwm6iiOOwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQB0fyt3Et41aOfKRcTUgJGY8IDGmogqgHSGLdP6VddxxLT1Pe4i/5oGe2Q6AMYcBvUmq26afY4c5ocREBcqTYwnb5B7HkebMOSRs7fIWl09sTbr5wh1DTib9JfmhnK2xBD44cW4bqNLJDJ1g4vyPw1/1iHK1b0eQu9nyH0sh4SFbUDit33cLaXJgsg164l5h+JsAwKQBqBQIGNXgcWXQjTdS8vez/lDSx6ZbkcA+/EJyuatkNyom27UTNgdKDMSmia25NUsSXTEkAKnRSAL5MuleA4ifGlJTp4rLJ92bbjhSqmPlA6atd8P40ldXZ4TKqGU1ZmQUs1+JvF1WiuakMQd
                 </CertificatePem>
             </Key>
         </Keys>
         <IDP entityID="idp"
-             signatureAlgorithm="RSA_SHA256">
+             signatureAlgorithm="RSA_SHA256"
+             signatureCanonicalizationMethod="http://www.w3.org/2001/10/xml-exc-c14n#">
             <SingleSignOnService signRequest="true"
                                  validateResponseSignature="true"
+                                 validateAssertionSignature="false"
                                  requestBinding="POST"
-                                 bindingUrl="http://localhost:8080/auth/realms/saml-demo/protocol/saml"/>
+                                 bindingUrl="https://dev-sso.pathfinder.gov.bc.ca/auth/realms/bcgov/protocol/saml"/>
             <SingleLogoutService signRequest="true"
                                  signResponse="true"
                                  validateRequestSignature="true"
                                  validateResponseSignature="true"
                                  requestBinding="POST"
                                  responseBinding="POST"
-                                 postBindingUrl="http://localhost:8080/auth/realms/saml-demo/protocol/saml"
-                                 redirectBindingUrl="http://localhost:8080/auth/realms/saml-demo/protocol/saml"/>
-            <Keys>
-                <Key signing="true">
-                    <CertificatePem>
-                        MIIBnDCCAQUCBgFSo+s8KTANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAlzYW1sLWRlbW8wHhcNMTYwMjAyMjEzNTQ4WhcNMjYwMjAyMjEzNzI4WjAUMRIwEAYDVQQDDAlzYW1sLWRlbW8wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKtWsK5O0CtuBpnMvWG+HTG0vmZzujQ2o9WdheQu+BzCILcGMsbDW0YQaglpcO5JpGWWhubnckGGPHfdQ2/7nP9QwbiTK0FbGF41UqcvoaCqU1psxoV88s8IXyQCAqeyLv00yj6foqdJjxh5SZ5z+na+M7Y2OxIBVxYRAxWEnfUvAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAi8/ltyBrrck7ixXfvNmvl50R0KmdHXoe65KVeH9CQmFPolVWeiv7rRr3QxOLjiz2EWoVRWViKHgzZt+rtVOiTDQGTFWsr84yHuFBonlSrmk21uj7Tupdu2Huv8JdHp8ueqSeIW7uV79RvxW7aB420jYCl9OSuQ0OTZ+ECcpxm8I=
-                    </CertificatePem>
-                </Key>
-            </Keys>
+                                 postBindingUrl="https://dev-sso.pathfinder.gov.bc.ca/auth/realms/bcgov/protocol/saml"
+                                 redirectBindingUrl="https://dev-sso.pathfinder.gov.bc.ca/auth/realms/bcgov/protocol/saml"/>
         </IDP>
     </SP>
 </keycloak-saml-adapter>

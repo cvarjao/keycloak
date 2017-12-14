@@ -19,21 +19,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <!--
     <parent>
         <artifactId>keycloak-examples-broker-parent</artifactId>
         <groupId>org.keycloak</groupId>
         <version>3.4.2.Final-SNAPSHOT</version>
     </parent>
-
+    -->
     <name>Keycloak Broker Examples - SAML Identity Provider Brokering</name>
     <artifactId>saml-broker-authentication</artifactId>
+    <groupId>org.keycloak</groupId>
+    <version>3.4.2.Final-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <description>
         An example about how to broker a SAML v2 Identity Provider
     </description>
-
+    
+    <properties>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+      <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+    </properties>
+  
     <repositories>
         <repository>
             <id>jboss</id>
@@ -48,6 +58,7 @@
     <build>
         <finalName>saml-broker-authentication</finalName>
         <plugins>
+            <!--
             <plugin>
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
@@ -61,6 +72,16 @@
                 <configuration>
                     <skip>false</skip>
                 </configuration>
+            </plugin>
+            -->
+            <plugin>
+              <artifactId>maven-war-plugin</artifactId>
+              <version>${maven-war-plugin.version}</version>
+              <configuration>
+                <warName>ROOT</warName>
+                <!-- Java EE 7 doesn't require web.xml, Maven needs to catch up! -->
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+              </configuration>
             </plugin>
         </plugins>
     </build>

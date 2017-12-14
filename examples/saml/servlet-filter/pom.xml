@@ -18,15 +18,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <!--
     <parent>
         <artifactId>keycloak-examples-saml-parent</artifactId>
         <groupId>org.keycloak</groupId>
         <version>3.4.2.Final-SNAPSHOT</version>
     </parent>
-
+    -->
     <artifactId>saml-servlet-filter</artifactId>
-
+    <groupId>org.keycloak</groupId>
+    <version>3.4.2.Final-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>Keycloak SAML Adapter as a Servlet Filter</name>
@@ -38,17 +39,44 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
         </license>
     </licenses>
+    <properties>
+        <apache.httpcomponents.version>4.5.2</apache.httpcomponents.version>
+        <apache.httpcomponents.httpcore.version>4.4.4</apache.httpcomponents.httpcore.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-saml-servlet-filter-adapter</artifactId>
+            <version>3.4.1.Final</version>
         </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache.httpcomponents.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${apache.httpcomponents.httpcore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${apache.httpcomponents.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
     </dependencies>
 
     <build>
         <!-- Set the name of the war, used as the context root when the app is deployed -->
         <finalName>${project.artifactId}</finalName>
         <plugins>
+          <!--
             <plugin>
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
@@ -62,6 +90,16 @@
                 <configuration>
                     <skip>false</skip>
                 </configuration>
+            </plugin>
+          -->
+            <plugin>
+              <artifactId>maven-war-plugin</artifactId>
+              <version>3.2.0</version>
+              <configuration>
+                <warName>ROOT</warName>
+                <!-- Java EE 7 doesn't require web.xml, Maven needs to catch up! -->
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+              </configuration>
             </plugin>
         </plugins>
     </build>
